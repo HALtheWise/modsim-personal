@@ -5,6 +5,7 @@ function [ temp_fall_time ] = coffee_paramtest( cream_addition_time )
 
 	[Times, Temperatures] = coffee_runsim(cream_addition_time);
     CoolEnoughTimes = Times((Temperatures <= safeTemp));
+    CoolEnoughTemps = Temperatures((Temperatures <= safeTemp));
     %disp(CoolEnoughTimes);
     if isempty(CoolEnoughTimes)
         temp_fall_time = inf;
@@ -12,6 +13,19 @@ function [ temp_fall_time ] = coffee_paramtest( cream_addition_time )
     end
 
     % TODO should linearly interpolate between nearest data points
-    temp_fall_time = CoolEnoughTimes(1);
+    
+    TooHotTimes = Times((Temperatures > safeTemp));
+    TooHotTemps = Temperatures((Temperatures > safeTemp));
+    if isempty(TooHotTimes)
+        temp_fall_time = CoolEnoughTimes(1);
+        return
+    end
+    
+    disp(TooHotTimes(end))
+    temp_fall_time = TooHotTimes(end) + ...
+        (CoolEnoughTimes(1) - TooHotTimes(end)) * ...
+        (TooHotTemps(end) - safeTemp) / (TooHotTemps(end) - CoolEnoughTemps(1));
+    %disp((CoolEnoughTimes(1) - TooHotTimes(end)) * ...
+    %    (TooHotTemps(end) - safeTemp) / (TooHotTemps(end)-CoolEnoughTemps(1)))
+    
 end
-

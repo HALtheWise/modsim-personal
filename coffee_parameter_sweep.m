@@ -9,7 +9,7 @@ for i = 1:length(testpoints)
 	CoolTimes(i) = coffee_paramtest(testpoints(i));
 end
 
-plot(testpoints, CoolTimes);
+plot(testpoints/60, CoolTimes/60);
 title('Coffee heat flow simulation (parameter sweep)');
-xlabel('Elapsed time (minutes)');
-ylabel('Coffee temperature (°C)');
+xlabel('Coffee Addition Time (minutes)');
+ylabel('Coffee cool temperature (minutes)');
