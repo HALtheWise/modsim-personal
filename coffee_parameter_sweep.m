@@ -1,13 +1,15 @@
 clf;
 hold on;
 
-testpoints = linspace(0.001, 29.999*60, 7);
+testpoints = linspace(0.001, 29.999*60, 100);
+CoolTimes = zeros(1, length(testpoints));
 
-for testpoint = testpoints
-	[Times, Temperatures] = coffee_runsim(testpoint);
 
-    plot(Times / 60, Temperatures - 270,'.-');
+for i = 1:length(testpoints)
+	CoolTimes(i) = coffee_paramtest(testpoints(i));
 end
-    title('Coffee heat flow simulation (parameter sweep)');
-    xlabel('Elapsed time (minutes)');
-    ylabel('Coffee temperature (°C)');
+
+plot(testpoints, CoolTimes);
+title('Coffee heat flow simulation (parameter sweep)');
+xlabel('Elapsed time (minutes)');
+ylabel('Coffee temperature (°C)');
