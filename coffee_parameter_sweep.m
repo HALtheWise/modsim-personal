@@ -12,4 +12,4 @@ end
 plot(testpoints/60, CoolTimes/60);
 title('Coffee heat flow simulation (parameter sweep)');
 xlabel('Coffee Addition Time (minutes)');
-ylabel('Coffee cool temperature (minutes)');
+ylabel('Coffee cool time (minutes)');
