@@ -7,17 +7,17 @@ function [ temp_fall_time ] = coffee_paramtest( cream_addition_time )
     CoolEnoughTimes = Times((Temperatures <= safeTemp));
     CoolEnoughTemps = Temperatures((Temperatures <= safeTemp));
     
-    
     if isempty(CoolEnoughTimes)
-        % Coffee never reaches sufficiently cool temperature
+        % Edge case: Coffee never reaches sufficiently cool temperature
         temp_fall_time = inf;
         return
     end
     
     TooHotTimes = Times((Temperatures > safeTemp));
     TooHotTemps = Temperatures((Temperatures > safeTemp));
+    
     if isempty(TooHotTimes)
-        % Coffee begins simulation cool enough
+        % Edge case: Coffee begins simulation cool enough
         temp_fall_time = CoolEnoughTimes(1);
         return
     end

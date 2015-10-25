@@ -1,7 +1,7 @@
 clf;
 hold on;
 
-testpoints = linspace(0.001, 29.999*60, 100);
+testpoints = linspace(0.001, 29.999*60, 300);
 CoolTimes = zeros(1, length(testpoints));
 
 
@@ -11,5 +11,5 @@ end
 
 plot(testpoints/60, CoolTimes/60);
 title('Coffee heat flow simulation (parameter sweep)');
-xlabel('Coffee Addition Time (minutes)');
+xlabel('Cream Addition Time (minutes)');
 ylabel('Coffee cool time (minutes)');
