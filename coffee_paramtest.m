@@ -21,11 +21,8 @@ function [ temp_fall_time ] = coffee_paramtest( cream_addition_time )
         return
     end
     
-    disp(TooHotTimes(end))
     temp_fall_time = TooHotTimes(end) + ...
         (CoolEnoughTimes(1) - TooHotTimes(end)) * ...
         (TooHotTemps(end) - safeTemp) / (TooHotTemps(end) - CoolEnoughTemps(1));
-    %disp((CoolEnoughTimes(1) - TooHotTimes(end)) * ...
-    %    (TooHotTemps(end) - safeTemp) / (TooHotTemps(end)-CoolEnoughTemps(1)))
     
 end
