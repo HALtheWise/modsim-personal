@@ -1,4 +1,4 @@
-function [Times, Temperatures] = coffee_init(cream_addition_time)
+function [Times, Temperatures] = coffee_runsim(cream_addition_time)
     % Define simulation parameters
     p = coffee_initial_params();
     p.cream_addition_time = cream_addition_time;

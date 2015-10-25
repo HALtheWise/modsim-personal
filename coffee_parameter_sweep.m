@@ -4,7 +4,7 @@ hold on;
 testpoints = linspace(0.001, 29.999*60, 7);
 
 for testpoint = testpoints
-	[Times, Temperatures] = coffee_init(testpoint);
+	[Times, Temperatures] = coffee_runsim(testpoint);
 
     plot(Times / 60, Temperatures - 270,'.-');
 end
