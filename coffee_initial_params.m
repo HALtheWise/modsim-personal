@@ -6,7 +6,7 @@ function [ p ] = coffee_initial_params()
     p.cup_d = 8 / 100; % meters
     p.cup_h = 10 / 100; % meters
     p.cup_t = 0.7 / 100; % meters
-    p.cup_cond = 1.2; % W / m / K
+    p.cup_cond = 1.5; % W / m / K
 
     
 %Coffee properties
