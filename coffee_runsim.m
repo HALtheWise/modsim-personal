@@ -5,11 +5,11 @@ function res = coffee_runsim(cream_addition_time)
     
     drinkable_threshold = 320;
 
-    function [VALUE, ISTERMINAL, DIRECTION] = drinkableEvent(~, Y)
-        coffee_temp = energy_to_temperature(Y(1), p);
-        VALUE = coffee_temp - drinkable_threshold;
-        ISTERMINAL = 0;
-        DIRECTION = -1;
+    function [val, isterminal, dir] = drinkableEvent(~, y, ~)
+        coffee_temp = energy_to_temperature(y(1), p);
+        val = coffee_temp - drinkable_threshold;
+        isterminal = 0;
+        dir = -1;
     end
     
     % Setup events
