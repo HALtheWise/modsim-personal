@@ -3,7 +3,7 @@
 
 function eulers_method(initial_haddock)
     simDuration = 20; %years
-    timeStep = 5; % years This must stay 1 until dt get properly implemented
+    timeStep = 2; % years This must stay 1 until dt get properly implemented
     
     time = 0;
     Times = [0];
@@ -20,16 +20,16 @@ function eulers_method(initial_haddock)
         
         error = abs(res2-res1);
         
-        dt = min(timeStep, 1/error);
+        dt = min(timeStep, .1/error);
         
         time = time + dt;
         
         % Apply various flows to stocks
-        Stocks(end+1) = res1;
+        Stocks(end+1) = odestep2(@flowfunc, Stocks(end), dt);
         Times(end+1) = time;
     end
     
-    plot(Times, Stocks, 'r+');
+    plot(Times, Stocks, 'r+-');
     
     %res = H;
 end
