@@ -2,8 +2,8 @@ function flows = flows_func( ~, stocks )
 %FLOWS_FUNC Summary of this function goes here
 %   Detailed explanation goes here
 
-    MJ = 10;
-    MS = 100;
+    MJ = 1.89813e27;% kg  (kilograms)
+    MS = 1.98843e30;% kg  (kilograms)
     
     % Stocks = (P1, V1, P2, V2)
     P1 = stocks(1:2);

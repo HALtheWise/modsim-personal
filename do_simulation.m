@@ -1,5 +1,8 @@
 options = odeset('RelTol', 1e-6);
-[Ts, Ys] = ode45(@flows_func,[0 1e6], [1 0 0 .00005 0 0 0 0], options);
+
+Y0 = [8.093e11 0 0 13000 0 0 0 0];
+
+[Ts, Ys] = ode45(@flows_func,[0 6e8], Y0, options);
 
 clf;
 hold on;
