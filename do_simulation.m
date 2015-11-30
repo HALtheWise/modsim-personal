@@ -6,3 +6,5 @@ hold on;
 
 plot(Ys(:,1), Ys(:,2))
 plot(Ys(:,5), Ys(:,6))
+
+legend('Jupiter', 'Sun');
