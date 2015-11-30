@@ -1,4 +1,4 @@
-options = odeset('RelTol', 1e-6);
+options = odeset('RelTol', 1e-6, 'Events', @event);
 
 Y0 = [8.093e11 0 0 13000 0 0 0 0];
 
