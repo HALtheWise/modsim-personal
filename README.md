@@ -19,6 +19,7 @@ This repository contains some of the code I created for individual assignments. 
 in their own repositories, linked below.
 
 <ul>
+<li> Exercise Set 6: Baseball: https://bitbucket.org/HALtheWise/modsim-baseball
 <li> Project 2: Thermodynamics: https://github.com/HALtheWise/modsim-thermodynamics
 <li> Project 3: Mechanics: https://github.com/HALtheWise/modsim-mechanics
 </ul>
