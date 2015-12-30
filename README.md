@@ -1,4 +1,4 @@
-# modsim-personal
+# ModSim (individual code)
 
 ModSim [Modeling and Simulation of the Physical World] was a class I took during my first semester at Olin College (Fall 2015). 
 It was my first introduction to MatLab, and involved a lot of independent research, partner work, and presentation skills.
